@@ -1,0 +1,16 @@
+---
+
+- import_tasks: check_vars.yml
+  tags:
+    - admin:check
+    - check
+
+- import_tasks: snap_install.yml
+  tags:
+    - admin:snap
+    - snap
+
+- import_tasks: package_install.yml
+  tags:
+    - admin:package
+    - package

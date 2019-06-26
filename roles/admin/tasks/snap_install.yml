@@ -1,0 +1,17 @@
+---
+
+- name: install snap packages
+  become: yes
+  snap:
+    name: "{{ item }}"
+  with_items:
+    - "{{ snap_install_packages }}"
+
+- name: install classic snap packages
+  become: yes
+  snap:
+    name: "{{ item }}"
+    state: present
+    classic: yes
+  with_items:
+    - "{{ snap_install_classic_packages }}"
