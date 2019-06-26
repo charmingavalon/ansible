@@ -3,23 +3,18 @@
 - name: update deb packages
   become: yes
   apt:
-    name: "{{ item }}"
+    name: "{{ admin_deb_packages }}"
     update_cache: yes
     cache_valid_time: 3600
     autoclean: yes
     autoremove: yes
-    upgrade: dist
-  with_items:
-    - "{{ admin_deb_packages }}"
   when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
 
 - name: update yum packages
   become: yes
   yum:
-    name: "{{ item }}"
+    name: "{{ admin_yum_packages }}"
     state: latest
     update_cache: yes
     autoremove: yes
-  with_items:
-    - "{{ admin_yum_packages }}"
   when: ansible_distribution == "Red Hat Enterprise Linux" or ansible_distribution == "CentOS"

@@ -5,7 +5,7 @@
   snap:
     name: "{{ item }}"
   with_items:
-    - "{{ snap_install_packages }}"
+    - "{{ admin_snap_packages }}"
 
 - name: install classic snap packages
   become: yes
@@ -14,4 +14,4 @@
     state: present
     classic: yes
   with_items:
-    - "{{ snap_install_classic_packages }}"
+    - "{{ admin_snap_classic_packages }}"
