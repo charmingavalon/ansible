@@ -1,0 +1,8 @@
+---
+
+- name: checking required variables are set
+  fail:
+    msg: "{{ item }} is not defined"
+  when: vars[item] is undefined or vars[item] == None
+  with_items:
+    - hostname

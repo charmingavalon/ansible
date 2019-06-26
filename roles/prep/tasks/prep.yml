@@ -1,0 +1,16 @@
+---
+
+- name: ensure python3 is installed
+  script: files/python3_installer.sh
+  register: python3_installer_output
+
+# - name: script outout
+#   debug:
+#     var: python3_installer_output.stdout_lines
+
+- name: gather facts
+  setup:
+
+- name: set hostname
+  hostname:
+    name: "{{ hostname }}"
