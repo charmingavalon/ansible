@@ -1,0 +1,8 @@
+---
+
+- name: configure this machine as admin
+  hosts:
+    - localhost
+  roles:
+    - {role: prep}
+    - {role: admin}
