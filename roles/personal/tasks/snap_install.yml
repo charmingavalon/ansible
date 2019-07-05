@@ -1,0 +1,19 @@
+---
+
+- name: install snap packages
+  become: yes
+  snap:
+    name: "{{ item }}"
+  with_items:
+    - "{{ personal_snap_packages }}"
+  when: personal_snap_packages is defined and personal_snap_packages != None
+
+- name: install classic snap packages
+  become: yes
+  snap:
+    name: "{{ item }}"
+    state: present
+    classic: yes
+  with_items:
+    - "{{ personal_snap_classic_packages }}"
+  when: personal_snap_classic_packages is defined and personal_snap_classic_packages != None

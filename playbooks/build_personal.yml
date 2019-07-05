@@ -1,0 +1,8 @@
+---
+
+- name: configure this machine as a personal machine
+  hosts:
+    - localhost
+  roles:
+    - {role: prep}
+    - {role: personal}
