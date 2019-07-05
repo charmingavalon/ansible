@@ -4,13 +4,16 @@
   tags:
     - admin:check
     - check
+  when: required_vars is defined
 
 - import_tasks: snap_install.yml
   tags:
     - admin:snap
     - snap
+  when: admin_snap_packages is defined or admin_snap_classic_packages is defined
 
 - import_tasks: package_install.yml
   tags:
     - admin:package
     - package
+  when: admin_deb_packages is defined or admin_yum_packages is defined

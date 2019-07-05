@@ -17,4 +17,4 @@ admin_snap_classic_packages:
   - skype
 
 admin_deb_packages:
-  - git
+  # - git

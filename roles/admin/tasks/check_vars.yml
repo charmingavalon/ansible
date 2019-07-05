@@ -5,7 +5,4 @@
     msg: "{{ item }} is not defined"
   when: vars[item] is undefined or vars[item] == None
   with_items:
-    - hostname
-    - admin_snap_packages
-    - admin_snap_classic_packages
-    - admin_deb_packages
+    - "{{ required_vars }}"

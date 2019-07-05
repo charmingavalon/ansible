@@ -6,6 +6,7 @@
     name: "{{ item }}"
   with_items:
     - "{{ admin_snap_packages }}"
+  when: admin_snap_packages is defined and admin_snap_packages != None
 
 - name: install classic snap packages
   become: yes
@@ -15,3 +16,4 @@
     classic: yes
   with_items:
     - "{{ admin_snap_classic_packages }}"
+  when: admin_snap_classic_packages is defined and admin_snap_classic_packages != None

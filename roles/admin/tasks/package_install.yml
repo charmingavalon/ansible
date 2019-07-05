@@ -1,6 +1,6 @@
 ---
 
-- name: update deb packages
+- name: install deb packages
   become: yes
   apt:
     name: "{{ admin_deb_packages }}"
@@ -8,13 +8,13 @@
     cache_valid_time: 3600
     autoclean: yes
     autoremove: yes
-  when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
+  when: (ansible_distribution == "Debian" or ansible_distribution == "Ubuntu") and admin_deb_packages is defined
 
-- name: update yum packages
+- name: install yum packages
   become: yes
   yum:
     name: "{{ admin_yum_packages }}"
     state: latest
     update_cache: yes
     autoremove: yes
-  when: ansible_distribution == "Red Hat Enterprise Linux" or ansible_distribution == "CentOS"
+  when: (ansible_distribution == "Red Hat Enterprise Linux" or ansible_distribution == "CentOS") and admin_yum_packages is defined
