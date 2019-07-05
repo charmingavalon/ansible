@@ -1,10 +1,5 @@
 ---
 
-- name: ensure python3 is installed
-  become: yes
-  script: files/python3_installer.sh
-  register: python3_installer_output
-
 - name: gather facts
   setup:
 
