@@ -1,8 +1,13 @@
 ---
 
 - name: checking required variables are set
-  fail:
-    msg: "{{ item }} is not defined"
-  when: vars[item] is undefined or vars[item] == None
+  assert:
+    that: 
+      - "{{ item }} is defined"
+    fail_msg: "ERROR: {{ item }} is not defined"
   with_items:
-    - hostname
+    - "{{ required_variables }}"
+
+- name: confirm required variables are set
+  debug:
+    msg: "SUCCESS: All required variables are defined"
