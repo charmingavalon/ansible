@@ -1,1 +1,8 @@
 ---
+
+required_variables: None
+
+admin_snap_packages:
+admin_snap_classic_packages:
+admin_deb_packages:
+admin_yum_packages:

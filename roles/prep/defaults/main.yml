@@ -1,2 +1,6 @@
 ---
+
+required_variables:
+  - hostname
+
 hostname: localhost

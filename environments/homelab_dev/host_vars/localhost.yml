@@ -4,17 +4,24 @@ ansible_connection: local
 
 hostname: admin
 
-admin_snap_packages:
+personal_snap_packages:
   - gnome-twitch
-  - keepassxc
-  - remmina
   - spotify
   - vlc
+
+personal_snap_classic_packages:
+  - skype
+
+personal_deb_packages:
+
+
+admin_snap_packages:
+  - keepassxc
+  - remmina
 
 admin_snap_classic_packages:
   - code
   - powershell
-  - skype
 
 admin_deb_packages:
-  # - git
+  - git

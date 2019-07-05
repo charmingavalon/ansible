@@ -4,7 +4,6 @@
   tags:
     - admin:check
     - check
-  when: required_vars is defined
 
 - import_tasks: snap_install.yml
   tags:
